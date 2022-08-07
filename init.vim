@@ -1,4 +1,11 @@
-set number
+:set number
+:set autoindent
+:set tabstop=4
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=4
+:set mouse=a
+:set keymodel=startsel,stopsel
 
 call plug#begin()
 
@@ -20,15 +27,26 @@ Plug 'ctrlpvim/ctrlp.vim'
 "phpactor"
 Plug 'phpactor/phpactor'
 
+"emmet"
+Plug 'mattn/emmet-vim'
+
+"multi user"
+Plug 'terryma/vim-multiple-cursors'
+
 call plug#end()
+
+"setup nerdtree toggle"
+nnoremap <C-b> :NERDTreeToggle<CR>
+
+let g:user_emmet_expandabbr_key='<Tab>'
 
 "setup theme material"
 let g:material_theme_style = 'darker-community'
 colorscheme material
 
 "setup nerdtree"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1"
+"autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif"
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
