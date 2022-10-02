@@ -38,6 +38,9 @@ call plug#end()
 "setup nerdtree toggle"
 nnoremap <C-b> :NERDTreeToggle<CR>
 
+"normal mode change"
+inoremap jj <Esc>
+
 let g:user_emmet_expandabbr_key='<Tab>'
 
 "setup theme material"
